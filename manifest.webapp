@@ -1,0 +1,26 @@
+﻿{
+	"name": "MD Geolocalizacion",
+	"description": "Manejando datos, por David Trillo Montero",
+	"launch_path" : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/geo.html",
+	"icons": {
+		"256" : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_256.png",
+		"128" : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_128.png",
+		"120" : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_120.png",
+		"90"  : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_90.png",
+		"64"  : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_64.png",
+		"60"  : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_60.png",
+		"48"  : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_48.png",
+		"32"  : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_32.png",
+		"16"  : "/host/0B-gMR7f1jSKvUUk2OHY0WDR3dE0/img/md_16.png"
+	},
+	"type": "web",
+	"developer": {
+		"name": "David Trillo Montero",
+		"url" : "http://www.manejandodatos.es"
+	},
+	"version": "1.0",
+	"permissions": {
+		"geolocation": { "description" : "Requerido para posicionar en el mapa" }
+	},
+	"default_locale": "es"
+}

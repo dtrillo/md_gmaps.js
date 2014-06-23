@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Instalador del Geolocalización - Manejando datos - Curso de Firefox OS</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/smoke.css">
+	<!-- pureCSS -->
+	<link rel="stylesheet" href="css/manejandodatos_purecss.css">
+	<link rel="stylesheet" href="css/purecss-min.css">
+	<link rel="stylesheet" href="css/extracss.css">
+	
+	<script type="text/javascript" src="js/smoke.min.js"></script>
+	<script type="text/javascript" src="js/zepto.min.js" ></script>
+</head>
+
+<body>
+	<div id="install">Estado de la instalación del Geolocalización - Manejando datos</div>
+<script>
+    $(document).ready(function() {
+		var instalada = 'La app Geolocalización ya esta instalada!';
+		
+      var gManifestName = location.href.replace('install.htm','') + 'manifest.webapp';
+      var request = navigator.mozApps.checkInstalled(gManifestName);
+      
+      request.onsuccess = function() {
+        if (request.result) {  // La app ya fue instalada.
+			$("#install").html(instalada);
+        } else {    // La app no esta instalada
+          $("#install").html("<input type='button' value='Instalar' class='pure-button'>");
+          $("#install").click(function() {
+              var req = navigator.mozApps.install(gManifestName);
+              req.onsuccess = function(data) { $("#install").html(instalada).unbind('click');  }
+              req.onerror = function(errObj) { smoke.alert("Error de instalacion: " + this.error.name); }
+			});
+        }
+      };
+      request.onerror = function() { smoke.alert('Error comprobando estado de la instalacion: ' + this.error.message);  }
+    });
+
+</script>
+	</body>
+</html>
+
+
